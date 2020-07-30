@@ -16,7 +16,7 @@
 # - divider: true  # Will insert a divider in the sidebar
 # - header: My Header  # Will insert a header with no link in the sidebar
 
-- url: /example/making-sure
+- url: /example/test
 - url: /example/markdown-power
 - url: /example/lab02
    
