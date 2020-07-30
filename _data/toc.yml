@@ -16,10 +16,9 @@
 # - divider: true  # Will insert a divider in the sidebar
 # - header: My Header  # Will insert a header with no link in the sidebar
 
-- url: /test_pages/test
+- url: /example/making-sure
   not_numbered: true
   sections:
-    - url: /test_pages/layout_elements
-    - url: /test_pages/equations
-    - url: /test_pages/code
-    - url: /test_pages/limits
+    - url: /example/markdown-power
+    - url: /example/lab02
+   
