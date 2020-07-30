@@ -1,6 +1,6 @@
 rm -rf _build 
 cd ..
-jupyter-bok build legacy-jupyterbook
+jupyter-book build legacy-jupyterbook
 cd legacy-jupyterbook
 git add .
 msg="rebuilding site $(date)" 
