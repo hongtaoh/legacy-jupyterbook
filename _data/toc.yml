@@ -17,8 +17,6 @@
 # - header: My Header  # Will insert a header with no link in the sidebar
 
 - url: /example/making-sure
-  not_numbered: true
-  sections:
-    - url: /example/markdown-power
-    - url: /example/lab02
+- url: /example/markdown-power
+- url: /example/lab02
    
