@@ -1,0 +1,79 @@
+---
+title: |-
+  How to Use Legacy Jupyterbook Together with GitHub and Netlify
+pagenum: 0
+prev_page:
+  url: 
+next_page:
+  url: /example/markdown-power.html
+suffix: .md
+search: legacy jupyterbook git github book version com here netlify cd jupyter bash directory yourproject org install desktop hongtaoh build add origin deploy intro html using above am following want youll file ruby repository media enblog png back commit m push master not changes root content together final v demo project should run terminal create echo solution repo alert rm rf gemfile lock changing www jekyll need change detailing please information familiar msg sh simply example folder totally changed built april executablebooks releases tag compare newest pypi article ill briefly talk off pip mentioned show start named asusming mac codes any
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">How to Use Legacy Jupyterbook Together with GitHub and Netlify</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Jupyterbook totally changed the way a book is built in April 2020. The final legacy version is <a href="https://github.com/executablebooks/jupyter-book/releases/tag/v0.6.5">v0.6.5</a>. You can compare the <a href="https://legacy.jupyterbook.org/intro.html">legacy demo</a> with the <a href="https://jupyterbook.org/intro.html">newest version demo</a>.</p>
+<p>You can install the legacy version <a href="https://pypi.org/project/jupyter-book/0.6.5/">here</a>.</p>
+<h2 id="Using-Jupyterbook">Using Jupyterbook<a class="anchor-link" href="#Using-Jupyterbook"> </a></h2><p>In this article, I'll briefly talk about how to use this legacy version of jupyterbook together with GitHub and Netlify.</p>
+<p>First off, you should install the legacy version using <code>pip install jupyter-book==0.6.5</code> as mentioned above. Then, I will show you how to start a book named "legacy-jupyterbook" on Desktop. I am asusming that you are using a Mac. All the following codes should run in Terminal.</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> Desktop <span class="c1"># or any other directory you want to place your project</span>
+jupyter-book create legacy-jupyterbook <span class="c1"># You&#39;ll see the file created on Desktop</span>
+<span class="nb">echo</span> <span class="s2">&quot;2.6.2&quot;</span> &gt; .ruby-version <span class="c1"># To put a .ruby-version file in there</span>
+</pre></div>
+<p>The <code>echo "2.6.2" &gt; .ruby-version</code> solution come from <a href="https://stackoverflow.com/a/38194231">here</a>.</p>
+<p>Then, go to GitHub, and create a repository <strong>without</strong> checking "Initialize this repository with a README". Take a look at this HTTPS address:</p>
+<p><img src="https://hongtaoh.com/media/enblog/legacy-jupyterbook-github-repo-https.png" alt=""></p>
+<p>Then, go back to your Terminal:</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> legacy-jupyterbook
+git init
+<span class="nb">cd</span> .. <span class="c1"># To go back to the Desktop directory because the following line only functions in a level higher than the current one</span>
+jupyter-book build legacy-jupyterbook
+<span class="nb">cd</span> - <span class="c1"># To go back to legacy-jupyterbook</span>
+git add .
+git commit -m “uploading initial files.”
+git remote add origin https://github.com/hhao1992/second-try.git <span class="c1"># Replace it with yours</span>
+git push -u origin master
+</pre></div>
+<p>Then, you'll see some security alerts:</p>
+<p><img src="https://hongtaoh.com/media/enblog/legacy-jupyterbook-alert01.png" alt=""></p>
+<p><img src="https://hongtaoh.com/media/enblog/legacy-jupyterbook-alert02.png" alt=""></p>
+<p>Solve them this way:</p>
+<div class="highlight"><pre><span></span>rm -rf Gemfile.lock
+make install 
+git add .
+git commit -m <span class="s2">&quot;changing Gemfile.lock.&quot;</span>
+git push origin master
+</pre></div>
+<p>The above solution come from <a href="https://www.bookstack.cn/read/jupyterbook/8124f882effb2130.md#What%20is%20this%20Gemfile.lock%20file%20or%20why%20am%20I%20getting%20Jekyll%20dependency%20warnings?">here</a>.</p>
+<p>Then go to <a href="www.netlify.com/">Netlify</a> and connect to the GitHub repo. When deploy with Nellify, it will automatically know that this is a Jekyll theme and you don't need to change anything. I am not detailing what you can do with Netlify here. Please look for information about it by yourself if you are not familiar with it already.</p>
+<p>If you want to make changes later, first please <code>cd path/to/YourProject</code> and then use the following script:</p>
+<div class="highlight"><pre><span></span>rm -rf _build <span class="c1">#If you are familiar with Jekyll, you&#39;ll know what _build mean here.</span>
+<span class="nb">cd</span> ..
+jupyter-book build YourProject
+<span class="nb">cd</span> YourProject
+git add .
+<span class="nv">msg</span><span class="o">=</span><span class="s2">&quot;rebuilding site </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span> 
+git commit -m <span class="s2">&quot;</span><span class="nv">$msg</span><span class="s2">&quot;</span> 
+git push origin master
+</pre></div>
+<p>You can store this file as <code>deploy.sh</code>, save it to the root directory of YourProject. Every time after you've make all the changes you want, at the root directory of YourProject, simply run <code>bash deploy.sh</code> and Github and Netlify will deploy by themseles.</p>
+<h2 id="Example">Example<a class="anchor-link" href="#Example"> </a></h2><p>Finally, you can view the final product of the example I provided above <a href="https://legacy-jupyterbook.netlify.app/">here</a>. And <a href="https://github.com/hongtaoh/legacy-jupyterbook">here</a> is its GitHub repository.</p>
+<h2 id="Changing-content">Changing content<a class="anchor-link" href="#Changing-content"> </a></h2><p>I am not detailing how to customize the content here. You simply need to change it in the <code>content</code> folder at the root directory, and then make corressponding changes to <code>toc.yml</code> under the <code>_data</code> folder. You can find more information in the <a href="https://legacy.jupyterbook.org/intro.html">official guide</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
