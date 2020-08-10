@@ -1,5 +1,7 @@
 # How to Use Legacy Jupyterbook Together with GitHub and Netlify
 
+>This article was originally posted by Hongtao Hao on [his personal website](https://hongtaoh.com/en/2020/07/25/legacy-jupyterbook/). You can find the GitHub Repo of this website at: https://github.com/hongtaoh/legacy-jupyterbook.
+
 Jupyterbook totally changed the way a book is built in April 2020. The final legacy version is [v0.6.5](https://github.com/executablebooks/jupyter-book/releases/tag/v0.6.5). You can compare the [legacy demo](https://legacy.jupyterbook.org/intro.html) with the [newest version demo](https://jupyterbook.org/intro.html).
 
 You can install the legacy version [here](https://pypi.org/project/jupyter-book/0.6.5/).
