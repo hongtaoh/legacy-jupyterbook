@@ -48,6 +48,9 @@ You should also know that Hugo has many shortcodes that make writing in Markdown
 
 For example, you can use the following codes to add figures:
 
+```md
+![](https://www.vetopia.com.hk/media/wysiwyg/Cute_Puppy.PNG)
+```
 
 ![](https://www.vetopia.com.hk/media/wysiwyg/Cute_Puppy.PNG)
 
