@@ -77,7 +77,7 @@ You can store this file as `deploy.sh`, save it to the root directory of YourPro
 Finally, you can view the final product of the example I provided above [here](https://legacy-jupyterbook.netlify.app/). And [here](https://github.com/hongtaoh/legacy-jupyterbook) is its GitHub repository. 
 
 ## Changing content
-I am not detailing how to customize the content here. You simply need to change it in the `content` folder at the root directory, and then make corressponding changes to `toc.yml` under the `_data` folder. You can find more information in the [official guide](https://legacy.jupyterbook.org/intro.html)
+I am not detailing how to customize the content here. You simply need to change it in the `content` folder at the root directory, and then make corressponding changes to `toc.yml` under the `_data` folder. You can find more information in the [official guide](https://legacy.jupyterbook.org/intro.html).
 
 
 
